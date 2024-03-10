@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        html,body{
+            height: 100%;
+            width: 100%;
+        }
+        .main{
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+        }
+        .main .left{
+            height: 100%;
+            width: 40%;
+            background-color: black;
+        }
+        .main .right{
+            height: 100%;
+            width: 100%;
+            /* width: 68%; */
+            background-color: aquamarine;
+        }
+        .left nav img{
+            margin-left: 50px;
+            margin-top: 20px;
+        }
+        .left h3{
+            color: white;
+            font-size: 40px;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            margin-top: 100px;
+            margin-left: 25px;
+        }
+        .left h5{
+            color: white;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-size: 22px;
+            margin-top: 50px;
+            line-height: 10px;
+            margin-left: 20px;
+        }
+        .left h6 {
+    position: relative;
+    text-align: center;
+    color: white;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 22px;
+    margin-top: 50px;
+    line-height: 10px;
+    margin-left: 10px;
+}
+
+.left h6::before,
+.left h6::after {
+    content: "";
+    display: inline-block;
+    width: 30%;
+    height: 1px;
+    background: linear-gradient(269deg, #424ba6 0%, #21265300 100%);
+    vertical-align: middle;
+}
+
+.left h6::before {
+    margin-right: 10px;
+}
+
+.left h6::after {
+    margin-left: 10px;
+}
+.right{
+    background: linear-gradient(black,#0E0D41,#082C4B);
+}
+.right{
+    h2{
+        color: white;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 35px;
+        margin-top: 140px;
+        margin-left: 230px;
+    }
+    h2 span{
+        color: dodgerblue;
+        letter-spacing: 2px;
+        font-size: 42px;
+        transition: all ease;
+    }
+    h2 span:hover{
+        color: white;
+    }
+    h6{
+        color: white;
+        font-size: 20px;
+        margin-left: 230px;
+        margin-top: 20px;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+    input{
+        margin-left: 230px;
+        /* padding: 10px 100px; */
+        height: 40px;
+        width: 365px;
+        margin-top: 5px;
+    }
+    #a{
+        padding-left: 10px;
+    }
+    button{
+        background-color: #ED483E;
+        height: 40px;
+        width: 365px;
+        margin-left: 230px;
+        margin-top: 20px;
+        color: white;
+        font-size: 15px;
+    }
+    
+}
+@media only screen and (max-width: 400px) and (max-height: 700px) {
+            .main {
+                flex-direction: column;
+                height: 100%;
+                width: 100%;
+            }
+
+            .left {
+                display: none;
+            }
+
+            .right {
+                width: 400px;
+            }
+            
+            .right h2 {
+                margin-top: 100px;
+                margin-left: 50px;
+                font-size: 25px;
+            }
+
+            .right h2 span {
+                font-size: 30px;
+                margin-left: 10px;
+            }
+
+            .right h6 {
+                
+                margin-left: 50px;
+                margin-top: 30px;
+                font-size: 15px;
+            }
+
+            .right input {
+                margin-left: 50px;
+                width: calc(100% - 100px);
+            }
+
+            .right button {
+                margin-left: 50px;
+                width: calc(100% - 100px);
+                margin-top: 40px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="left">
+            <nav>
+                <img height="70px" width="150px" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSOk4wDEk8d-ZIUBq1CwpHxc08MwVHHn--sdQ&usqp=CAU" alt=""></nav>
+                <h3>Everything you need <br>(and then some)</h3>
+                <h5>✔️ End-to-end event management</h5>
+                <h5>✔️ In-depth event analytics</h5>
+                <h5>✔️ 0% commission event ticketing</h5>
+                
+                <h6>trusted by</h6>
+                
+               
+        </div>
+        <div class="right">
+            <h2>Get started with <span>MEA</span></h2>
+            <form action="/register" method="post">
+                <h6>USERNAME:</h6>
+                <input type="text" name="username"><br>
+                <h6>EMAIL:</h6>
+                <input type="email" name="email"><br>
+                <h6>PASSWORD:</h6>
+                <input type="text" name="password"><br>
+                <h6>PHONE NO.:</h6>
+                <input  id="a" type="number" name="phnumber" placeholder="+91"><br>
+                <button>Register</button>
+              </form>
+        </div>
+    </div>
+</body>
+</html>

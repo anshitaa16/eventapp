@@ -1,0 +1,212 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    html,body{
+      min-height: 100%;
+      width: 100%;
+      background: linear-gradient(black,#0E0D41,#082C4B);
+    }
+    nav{
+      height: 80px;
+      width: 100%;
+      /* background-color: bisque; */
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      color: white;
+    }
+    nav img{
+      margin-left: 50px;
+    }
+    .side{
+      display: flex;
+
+    }
+    .side h1{
+      font-size: 18px;
+      margin-right: 50px;
+      
+    }
+    .side h1 a{
+      
+      color: white;
+      text-decoration: none;
+      font-family: Arial, Helvetica, sans-serif;
+      font-family: 400;
+      transition: all ease 0.2s;
+    }
+    .side h1 a:hover{
+      scale: 2;
+      color: yellowgreen;
+    }
+    .box{
+      height: 88%;
+      width: 100%;
+      /* background-color: aliceblue; */
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+    }
+    .box .bx{
+      height: 100%;
+      width: 40%;
+      /* background-color: rgb(101, 91, 91); */
+    }
+   .box #bx1 h2{
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    padding-top: 140px;
+    color: #20DBD4;
+   }
+   .box #bx1 h1{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 60px;
+    line-height: 52px;
+    margin-top: 20px;
+    color: white;
+   }
+   .box #bx1 p{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 25px;
+    color: white;
+    margin-top: 20px;
+    font-weight: 100;
+    line-height: 40px;
+   }
+   button{
+    padding: 12px;
+    font-size: 15px;
+    font-weight: 600;
+    background-color: #ED483E;
+    color: white;
+    border: none;
+    margin-top: 10px;
+    transition: all ease 0.5s;
+   }
+  button:hover{
+    background-color: white;
+    color: #ED483E;
+  }
+  .head{
+    height: 15%;
+    width: 100%;
+    background-color: black;
+    h1{
+      text-align: center;
+      font-family: cursive;
+      padding-top: 1%;
+      font-size: 40px;
+      color: white;
+    }
+  }
+  .details{
+    min-height: 88%;
+    width: 100%;
+    /* background-color: azure; */
+    display: grid;
+grid-template-columns: repeat(3, 1fr);
+grid-template-rows: repeat(3, 1fr);
+grid-column-gap: 25px;
+grid-row-gap: 16px;
+    h1{
+        text-align: center;
+        font-size: 30px;
+        font-family: cursive;
+        padding-top: 20px;
+      }
+  }
+    .details-container{
+      
+      margin-left: 12%;
+      margin-top: 5%;
+      height: 95%;
+      width: 75%;
+      background: linear-gradient(#5b5ab9b3,#414074);
+      font-size: 20px;
+      padding: 35px 40px;
+      line-height: 28px;
+      color: white;
+      strong{
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      a{
+        color: rgb(152, 152, 47);
+        font-size: 15px;
+        padding-left: 70%;
+        
+      }
+    }
+  </style>
+</head>
+<body>
+  
+    <nav>
+      <img height="70px" width="150px" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSOk4wDEk8d-ZIUBq1CwpHxc08MwVHHn--sdQ&usqp=CAU" alt="">
+      <div class="side">
+        <h1><a href="/">HOME</a></h1>
+        <h1><a href="/register">REGISTER</a></h1>
+        <h1><a href="/signin">SIGN-IN</a></h1>
+        <h1><a href="/create-event">CREATE-EVENT</a></h1>
+        <h1><a href="/details">EVENT-DETAILS</a></h1>
+      </div>
+    </nav>
+    <div class="head"><h1>Event Details</h1></div>
+
+    <div class="details">
+      
+      <% eventDetails.forEach((dets)=>{%>
+        <div class="details-container">
+          
+          <p><strong>Event Location:</strong>&nbsp;&nbsp;<%= dets.eventLocation %></p>
+          <p><strong>Event Name:</strong>      &nbsp;&nbsp; <%= dets.eventName %></p>
+          <p><strong>Start Date:</strong> &nbsp;&nbsp;<%= dets.startDate %></p>
+          <p><strong>Start Time:</strong> <%= dets.startTime %></p>
+          <p><strong>End Date:</strong> <%= dets.endDate %></p>
+          <p><strong>End Time:</strong> <%=dets.endTime %></p>
+          <p><strong>Source Language:</strong> <%= dets.sourceLanguage %></p>
+      
+        
+          <a href="/create-event">Go Back</a>
+        </div>
+     <% })%>
+    </div>
+   
+  
+</body>
+</html>
+<!-- <html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Event Details</title>
+ 
+</head>
+<body>
+ <% eventDetails.forEach((dets)=>{%>
+    <div class="details-container">
+      <h1>Event Details</h1>
+      <p><strong>Event Location:</strong> <%= dets.eventLocation %></p>
+      <p><strong>Event Name:</strong> <%= dets.eventName %></p>
+      <p><strong>Start Date:</strong> <%= dets.startDate %></p>
+      <p><strong>Start Time:</strong> <%= dets.startTime %></p>
+      <p><strong>End Date:</strong> <%= dets.endDate %></p>
+      <p><strong>End Time:</strong> <%=dets.endTime %></p>
+      <p><strong>Source Language:</strong> <%= dets.sourceLanguage %></p>
+  
+    
+      <a href="/create-event">Go Back</a>
+    </div>
+ <% })%>
+
+</body>
+</html> -->
